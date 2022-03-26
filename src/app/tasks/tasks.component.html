@@ -1,0 +1,10 @@
+<label for="task">Adicione sua tarefa</label> <br>
+<input type="text" id="task" [(ngModel)]="newTask" value="">
+<button (click)="addToList()">Adicionar</button>
+
+<div *ngFor="let t of tasks; let index = index;" >
+
+<div>{{t}}</div>
+<input (click)="deleteTask(index)" type="button"
+    value="Delete">
+</div>
