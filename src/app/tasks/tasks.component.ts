@@ -12,13 +12,16 @@ export class TasksComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.tasks = [JSON.parse(localStorage.getItem('Lista'))];
+  }
 
   addToList() {
     if (this.newTask == '') {
     } else {
       this.tasks.push(this.newTask);
       this.newTask = '';
+      localStorage.setItem('lista',JSON.stringify(this.tasks));
     }
   }
 
